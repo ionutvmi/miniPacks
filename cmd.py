@@ -1,3 +1,6 @@
+"""
+Open cmd in the directory of the current file
+"""
 import os, sublime_plugin
 class CmdCommand(sublime_plugin.TextCommand):
     def run(self, edit):

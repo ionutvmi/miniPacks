@@ -3,5 +3,10 @@
         "command": "cmd",
         "mnemonic": "C",
         "caption": "CMD"
+    },
+    {
+        "command": "prompt_copy_line",
+        "mnemonic": "L",
+        "caption": "Copy # Line"
     }
 ]
