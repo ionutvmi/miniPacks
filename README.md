@@ -21,6 +21,11 @@ Examples of inputs
   - For line 25 till 27: `25-27`
 
 
+Install
+-----------------
+To install go to your Packages folder and run
+`git clone https://github.com/ionutvmi/sublimePacks.git`  
+Or download and unzip the archive in your packages folder.
 
 Contributions
 -----------------
