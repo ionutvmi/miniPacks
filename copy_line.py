@@ -37,7 +37,9 @@ class PromptCopyLineCommand(sublime_plugin.TextCommand):
 
             tmp = ''
             for i in range(lines[1] + 1):
-                tmp += self.get_line_content(lines[0] + i + 1) + '\n'
+                ln = lines[0] + i + 1
+                if self.is_valid_line(ln):
+                    tmp += self.get_line_content(ln) + '\n'
 
             self.view.run_command("paste_line", {"string": tmp, "newLine": False})
 
@@ -49,7 +51,8 @@ class PromptCopyLineCommand(sublime_plugin.TextCommand):
 
             tmp = ''
             for i in range(lines[0], lines[1] + 1):
-                tmp += self.get_line_content(i) + '\n'
+                if self.is_valid_line(i):
+                    tmp += self.get_line_content(i) + '\n'
 
             self.view.run_command("paste_line", {"string": tmp, "newLine": False})
 
