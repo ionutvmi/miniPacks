@@ -8,5 +8,10 @@
         "command": "prompt_copy_line",
         "mnemonic": "L",
         "caption": "Copy # Line"
+    },
+    {
+        "command": "show_my_docs",
+        "mnemonic": "d",
+        "caption": "Show my docs"
     }
 ]

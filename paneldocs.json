@@ -1,0 +1,38 @@
+[
+    {
+        "keys": ["get_data"], // array of words to match this docs
+        "case": false, // if search should be case sensitive
+        "content": "Reads a json file", // the content that will show in the panel
+        "scope": "source.python" // the scope where this is valid, * for all scopes
+    },
+    {
+        "keys": ["match_key"],
+        "case": false,
+        "content": "Searches the docs for a key to match the word",
+        "scope": "source.python"
+    },
+    {
+        "keys": ["err"],
+        "case": false,
+        "content": "Closes the panel and shows the error in the status bar",
+        "scope": "source.python"
+    },
+    {
+        "keys": ["get_words"],
+        "case": false,
+        "content": "Returns the selection or the current word under the caret in ST",
+        "scope": "source.python"
+    },
+    {
+        "keys": ["get_docs_file"],
+        "case": false,
+        "content": "Seaches for paneldocs.json file in the current and parent folders",
+        "scope": "source.python"
+    },
+    {
+        "keys": ["compare_scope"],
+        "case": false,
+        "content": "Compares the current scope with the provided one",
+        "scope": "source.python"
+    }
+]

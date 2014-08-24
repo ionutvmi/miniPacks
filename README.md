@@ -1,17 +1,14 @@
-SublimePacks
-============
+# SublimePacks
 
 A collection of small Sublime Text 3 plugins and helper commands.
 
-The available plugins are
+The available plugins are:  
 
-
-
-## cmd.py
+### cmd.py
 This plugin will one the cmd prompt in the directory of the current file.  
 To use right click -> Cmd
 
-## copy_line.py
+### copy_line.py
 This plugin will copy and paste one or more lines from the current file
 To use right click -> Copy # line
 Examples of inputs
@@ -21,18 +18,31 @@ Examples of inputs
   - For line 25 till 27: `25-27`
 
 
-Install
------------------
+### panel_docs.py
+This plugin will search in the current dir and on parent ones for a file named
+`paneldocs.json` and when the `show_my_docs` command will run it will pop a panel
+with the docs provided in the json file for the current word/selection.  
+To run it `Ctrl+Alt+DblClick` or `right click -> Show my docs`  
+
+Adding docs
+```javascript
+{
+    "keys": ["get_data"], // array of words to match this docs
+    "case": false, // if search should be case sensitive
+    "content": "Reads a json file", // the content that will show in the panel
+    "scope": "source.python" // the scope where this is valid, * for all scopes
+}
+```
+
+## Install
 To install go to your Packages folder and run
 `git clone https://github.com/ionutvmi/sublimePacks.git`  
 Or download and unzip the archive in your packages folder.
 
-Contributions
------------------
+## Contributions 
 If you find a bug or have suggestions open an issue [here](https://github.com/ionutvmi/SublimeMybbTplEditor/issues)
 
-Donate 
------------------
+## Donate 
 If you like my code you can support me by making a [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=T9HU2KAF54EBE&lc=RO&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
 
