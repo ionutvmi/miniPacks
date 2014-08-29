@@ -2,7 +2,10 @@
     {
         "command": "cmd",
         "mnemonic": "C",
-        "caption": "CMD"
+        "caption": "CMD",
+        "args": {
+            "powershell": true
+        }
     },
     {
         "command": "prompt_copy_line",
