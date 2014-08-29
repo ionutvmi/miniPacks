@@ -1,10 +1,10 @@
 [
     {
-        "command": "cmd",
+        "command": "start_program",
         "mnemonic": "C",
         "caption": "CMD",
         "args": {
-            "powershell": true
+            "program": false
         }
     },
     {
