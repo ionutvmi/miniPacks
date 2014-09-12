@@ -16,6 +16,8 @@ class StartProgramCommand(sublime_plugin.TextCommand):
 
     def start_program(self, program):
         file_name = self.view.file_name()
+        if file_name is None:
+            file_name = os.path.expanduser('~/.vimrc')
         directory = os.path.dirname(file_name)
         driver = os.path.splitdrive(file_name)[0]
 
