@@ -7,15 +7,17 @@ Example inputs:
     For line 25 till 27: 25-27
 """
 
-import sublime_plugin, re
+import sublime_plugin
+import re
 
 _line = re.compile('^\d+$')
 _line_next = re.compile('^\d+\:\d+$')
 _line_between = re.compile('^\d+\-\d+$')
 
+
 class PromptCopyLineCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        # prompt fo the line # to copy
+        # prompt for the line # to copy
         self.view.window().show_input_panel(
             "Enter the line you want to copy: ",
             '',
@@ -37,11 +39,13 @@ class PromptCopyLineCommand(sublime_plugin.TextCommand):
 
             tmp = ''
             for i in range(lines[1] + 1):
-                ln = lines[0] + i + 1
+                ln = lines[0] + i
                 if self.is_valid_line(ln):
                     tmp += self.get_line_content(ln) + '\n'
 
-            self.view.run_command("paste_line", {"string": tmp, "newLine": False})
+            self.view.run_command(
+                "paste_line", {"string": tmp, "newLine": False}
+                )
 
         # between lines
         elif _line_between.match(input):
@@ -54,22 +58,22 @@ class PromptCopyLineCommand(sublime_plugin.TextCommand):
                 if self.is_valid_line(i):
                     tmp += self.get_line_content(i) + '\n'
 
-            self.view.run_command("paste_line", {"string": tmp, "newLine": False})
+            self.view.run_command(
+                "paste_line", {"string": tmp, "newLine": False}
+                )
 
         else:
             self.view.run_command('prompt_copy_line')
 
-
     def is_valid_line(self, numLine):
-
         # NOL is the number of line in the file
         NOL = self.view.rowcol(self.view.size())[0] + 1
         # if the line # is not valid
         # e.g. 0 or less, or more that the number of line in the file
         if numLine < 1 or numLine > NOL:
             return False
-
-        return True
+        else:
+            return True
 
     def get_line_content(self, line):
         # retrieve the content of numLine
@@ -89,10 +93,13 @@ class PromptCopyLineCommand(sublime_plugin.TextCommand):
             return
 
         # do the actual copy
-        self.view.run_command("paste_line", {"string": self.get_line_content(numLine)})
+        self.view.run_command(
+            "paste_line", {"string": self.get_line_content(numLine)}
+            )
+
 
 class PasteLineCommand(sublime_plugin.TextCommand):
-    def run(self, edit, string, newLine = True):
+    def run(self, edit, string, newLine=True):
         # retrieve current offset
         current_pos = self.view.sel()[0].begin()
         # retrieve current line number
